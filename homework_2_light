@@ -135,3 +135,4 @@ x= np.random.randint(1,6, (4))
 c= np.random.randint(1,6, (4))
 print('A:', A, 'B:', B , 'x:',x, 'c:', c, sep='\n')
 F= 1/25*A.dot(A.T).dot(x)+B.dot(x)+5*c
+print(F)
