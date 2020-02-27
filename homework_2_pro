@@ -1,0 +1,75 @@
+import numpy as np
+print('Задача 1')
+'''
+* Подгрузите массив **iris.csv** и назовите его my_array. '''
+
+my_array = np.loadtxt('iris.csv', skiprows=1, delimiter=',')
+print(my_array)
+'''
+* В документации библиотеки numpy найдите функцию, генерирующую случаные числа.
+
+* Создайте двумерный массив из случайных чисел той же размерности, что и my_array.
+
+* Назовите его my_generated_array
+'''
+my_generated_array=np.random.sample(my_array.shape)
+#print(round(my_generated_array, 2))
+
+print('Задача 2')
+'''
+* Выполните поэлементное умножение my_array на my_generated_array'''
+print(my_array * my_generated_array)
+
+
+'''
+* Склейте массивы my_array, my_generated_array в один'''
+vstack_array=np.vstack((my_array, my_generated_array))
+
+'''
+* Возьмите склеенный массив и разделите его на равные части (больше двух)'''
+
+print(np.hsplit(vstack_array,5))
+print(np.vsplit(vstack_array,5))
+
+
+print('Задача 3')
+'''
+* Найдите все элементы массива my_array, которые больше трех и меньше 5 одновременно. Используйте методологию подвыборки массива с условием'''
+
+
+d= np.where((my_array>3) & (my_array<5))
+print (my_array[d])
+
+print('Задача 4')
+'''
+Создайте трехмерный массив размера 2 на 3 на 4, состоящий из случайных вещественных чисел от 15 до 37. Используйте встроенные методы библиотеки  np.random...
+'''
+massiv_3d =np.random.randint(15,37,(2,3,4))
+print(massiv_3d)
+
+print('Задача 5')
+'''
+Используя массив из предыдущей задачи, преобразуйте его в новый массив со следующими значениями:
+    * "small", если значения меньше 20
+    * "medium", если значения в промежутке [20, 30]
+    * "large", если значения больше 30
+    '''
+
+
+d= np.where(massiv_3d<20, 'small',massiv_3d)
+d= np.where((massiv_3d>=20)&(massiv_3d<=30),'medium',d)
+d=np.where(massiv_3d>30,'large',d)
+print(d)
+
+
+print('Задача 6')
+'''
+Создайте одномерный массив из случайных 10 значений. 
+
+* Не используя цикл for, сумму значений с 3 по 7 элемент.
+* Найдите сумму квадратов последних двух элементов.
+'''
+
+b=np.random.randint(1,10, 10)
+print('b',b)
+print('sum:',np.sum([b[3:8]]))[b[3],b[8]]
