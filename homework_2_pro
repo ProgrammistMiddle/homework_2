@@ -72,4 +72,5 @@ print('Задача 6')
 
 b=np.random.randint(1,10, 10)
 print('b',b)
-print('sum:',np.sum([b[3:8]]))[b[3],b[8]]
+print('sum:',np.sum([b[3:8]]))
+print('prod:',np.prod(b[-2:]))
